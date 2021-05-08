@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ArrowController : MonoBehaviour
 {
-  GameObject player;
+  private GameDirector director;
+  private GameObject player;
   [SerializeField] float speed = -0.1f;
 
   private void Start()
   {
     player = GameObject.Find("player");
+    director = GameObject.Find("GameDirector").GetComponent<GameDirector>();
   }
 
   private void Update()
@@ -31,6 +33,7 @@ public class ArrowController : MonoBehaviour
 
     if (d < r1 + r2)
     {
+      director.DecreaseHp();
       Destroy(gameObject);
     }
   }
