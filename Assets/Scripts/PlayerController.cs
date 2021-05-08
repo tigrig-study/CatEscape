@@ -11,12 +11,22 @@ public class PlayerController : MonoBehaviour
 
     if (Input.GetKeyDown(KeyCode.LeftArrow))
     {
-      transform.Translate(-moveSpeed, 0, 0);
+      LButtonDown();
     }
 
     if (Input.GetKeyDown(KeyCode.RightArrow))
     {
-      transform.Translate(moveSpeed, 0, 0);
+      RButtonDown();
     }
+  }
+
+  public void LButtonDown()
+  {
+    transform.Translate(-moveSpeed, 0, 0);
+  }
+
+  public void RButtonDown()
+  {
+    transform.Translate(moveSpeed, 0, 0);
   }
 }
